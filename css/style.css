@@ -1,0 +1,185 @@
+/* Import Futuristic Font Set */
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;700&family=Rajdhani:wght@500;700&family=Titillium+Web:wght@300;400;700&display=swap');
+
+/* General Styling */
+body {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* minimize horizontal scroll */
+}
+
+/* Header */
+header {
+    background: #262626;
+    color: white;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+    height: 80px;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: rgba(38, 38, 38, 0.9);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
+    z-index: 15;
+}
+
+nav.active {
+    left: 0; /* Slides in */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li {
+    padding: 15px;
+    text-align: left;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: 'Exo', sans-serif;
+    display: block;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.logo-container img {
+    max-height: 120px;
+    width: auto;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 56.25vw; /* Maintain 16:9 aspect ratio (inspiration taken online) maxheight 500px */
+    background: url('../media/hero_image.jpg') center/cover no-repeat;
+    overflow: hidden;
+}
+
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* Scenic Sections */
+.scenic-section {
+    position: relative;
+    width: 100%;
+    height: 56.25vw;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.scenic1 {
+    background: url('../media/scenic1.jpg') center/cover no-repeat;
+}
+
+.scenic2 {
+    background: url('../media/scenic2.jpg') center/cover no-repeat;
+}
+
+.scenic3 {
+    background: url('../media/scenic3.jpg') center/cover no-repeat;
+}
+
+.scenic4 {
+    background: url('../media/scenic4.jpg') center/cover no-repeat;
+}
+
+@media (max-width: 768px) {
+    .scenic-section {
+        height: 75vw;
+        max-height: 400px;
+    }
+}
+
+.scenic-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.scenic-overlay h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.scenic-overlay p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    color: #bbb;
+    padding: 0.3rem 1rem;
+    text-align: left;
+    font-size: 0.8rem;
+}
