@@ -1,7 +1,6 @@
-/* Import Futuristic Font Set */
+
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;700&family=Rajdhani:wght@500;700&family=Titillium+Web:wght@300;400;700&display=swap');
 
-/* General Styling */
 body {
     font-family: 'Titillium Web', sans-serif;
     font-weight: 400;
@@ -12,7 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden; /* minimize horizontal scroll */
+    overflow-x: hidden;
 }
 
 /* Header */
@@ -24,7 +23,7 @@ header {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    z-index: 10;
+    z-index: 100;
     height: 80px;
 }
 
@@ -38,7 +37,7 @@ header {
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 20;
+    z-index: 150;
 }
 
 nav {
@@ -51,11 +50,11 @@ nav {
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
     padding-top: 60px;
     transition: left 0.3s ease-in-out;
-    z-index: 15;
+    z-index: 200;
 }
 
 nav.active {
-    left: 0; /* Slides in */
+    left: 0;
 }
 
 nav ul {
@@ -93,19 +92,22 @@ nav ul li a:hover {
 }
 
 .logo-container img {
-    max-height: 120px;
+    max-height: 60px;
     width: auto;
 }
 
-/* Hero Section */
-.hero {
+/* Hero & Scenic Sections */
+.hero, .scenic-section {
     position: relative;
     width: 100%;
-    height: 56.25vw; /* Maintain 16:9 aspect ratio (inspiration taken online) maxheight 500px */
-    background: url('../media/hero_image.jpg') center/cover no-repeat;
+    height: 56.25vw;
+    max-height: 500px;
     overflow: hidden;
 }
 
+.hero {
+    background: url('../media/hero_image.jpg') center/cover no-repeat;
+}
 
 .hero-overlay {
     position: absolute;
@@ -118,15 +120,6 @@ nav ul li a:hover {
     justify-content: center;
     text-align: center;
     color: white;
-}
-
-/* Scenic Sections */
-.scenic-section {
-    position: relative;
-    width: 100%;
-    height: 56.25vw;
-    max-height: 500px;
-    overflow: hidden;
 }
 
 .scenic1 {
@@ -145,12 +138,6 @@ nav ul li a:hover {
     background: url('../media/scenic4.jpg') center/cover no-repeat;
 }
 
-@media (max-width: 768px) {
-    .scenic-section {
-        height: 75vw;
-        max-height: 400px;
-    }
-}
 
 .scenic-overlay {
     position: absolute;
@@ -159,20 +146,44 @@ nav ul li a:hover {
     background: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    text-align: left;
     color: white;
+    padding: 40px;
+}
+
+/* Scenic 1 - Low Left */
+.scenic1 .scenic-overlay {
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+/* Scenic 2 - Up Right */
+.scenic2 .scenic-overlay {
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+/* Scenic 3 - Up Left */
+.scenic3 .scenic-overlay {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Scenic 4 - Low Right */
+.scenic4 .scenic-overlay {
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .scenic-overlay h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 0;
 }
 
 .scenic-overlay p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-top: 10px;
+    max-width: 600px;
 }
 
 /* Footer */
