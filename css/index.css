@@ -1,93 +1,138 @@
-/* Import Font */
-@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;700&family=Rajdhani:wght@500;700&family=Titillium+Web:wght@300;400;700&display=swap');
-
-/* Mobile-First Approach */
-body {
-    font-family: 'Titillium Web', sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #1a1a1a;
-    color: #f0f0f0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+  }
+  
+  header {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Header */
-header {
-    background: #262626;
-    padding: 10px;
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    height: 80px;
-}
-
-/* Hamburger Menu */
-.menu-toggle {
+    align-items: center;
+    background: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    
+  }
+  
+  .menu-toggle {
     font-size: 2rem;
     cursor: pointer;
-    color: white;
-}
-
-/* Hero Section */
-.hero {
+  }
+  
+  .logo-container img {
+    height: 50px;
+  }
+  
+  nav {
+    background: #131313;
+    display: none;
     width: 100%;
-    height: 60vh;
-    background: url('../media/hero_image.jpg') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}
-
-/* Scenic Sections */
-.scenic-section {
-    width: 100%;
-    height: 60vh;
-    background-size: cover;
-    background-position: center;
-}
-
-.scenic1 {
-    background-image: url('../media/scenic1.jpg');
-}
-
-.scenic2 {
-    background-image: url('../media/scenic2.jpg');
-}
-
-.scenic3 {
-    background-image: url('../media/scenic3.jpg');
-}
-
-.scenic4 {
-    background-image: url('../media/scenic4.jpg');
-}
-
-/* Text Overlay */
-.scenic-overlay {
+  }
+  
+  nav ul {
+    list-style: none;
+  }
+  
+  nav ul li {
+    border-bottom: 1px solid #494949;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+  }
+  
+  nav ul li a:hover {
+    background: #9a0707;
+  }
+  
+  .hero {
+    position: relative;
+    height: 80vh;
+    background: url('../media/hero_image.jpg') no-repeat center center/cover;
+    background-color: #131313;
+  }
+  
+  .hero-overlay {
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     padding: 20px;
-    color: white;
-}
+  }
+  
+  .scenic-section {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .scenic1 {
+    background: url('../media/scenic1.jpg') no-repeat center center/cover;
+    background-color: #131313;
+  }
+  
+  .scenic2 {
+    background: url('../media/scenic2.jpg') no-repeat center center/cover;
+    background-color: #131313;
+  }
+  
+  .scenic3 {
+    background: url('../media/scenic3.jpg') no-repeat center center/cover;
+    background-color: #131313;
+  }
+  
+  .scenic4 {
+    background: url('../media/scenic4.jpg') no-repeat center center/cover;
+    background-color: #131313;
+  }
+  
+  .scenic-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer {
+    background: #131313;
+    color: #fff;
+    text-align: center;
+    padding: 15px 20px;
+  }
+  
 
-/* Footer */
-footer {
-    background: #000;
-    color: #bbb;
-    padding: 10px;
-    text-align: left;
-}
-
-/* Responsive */
-@media (min-width: 768px) {
-    .hero {
-        height: 50vh;
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
     }
-    .scenic-section {
-        height: 50vh;
+  
+    .menu-toggle {
+      align-self: flex-end;
     }
-}
+  
+    nav ul li {
+      text-align: center;
+    }
+  }
+  
