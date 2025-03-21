@@ -80,7 +80,7 @@
   
   .scenic-section {
     position: relative;
-    height: 60vh;
+    aspect-ratio: 16 / 9;
     display: flex;
     justify-content: center;
     align-items: center;
