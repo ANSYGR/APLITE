@@ -1,3 +1,4 @@
+/* Global reset. Har sett flera webbutvecklare göra detta! */
 * {
   margin: 0;
   padding: 0;
@@ -55,7 +56,7 @@ nav ul li a:hover {
   background: #9a0707;
 }
 
-
+/* Kontaktsection: Layout och styling */
 .contact-section {
   max-width: 800px;
   margin: 2rem auto;
@@ -114,6 +115,8 @@ footer {
 }
 
 
+/* Responsiv design: Anpassningar för mindre skärmar */
+/* Mobile First ;) */
 @media (max-width: 768px) {
   header {
     flex-direction: column;

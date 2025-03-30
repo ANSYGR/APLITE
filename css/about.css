@@ -1,9 +1,11 @@
+/* Global reset. Har sett flera webbutvecklare göra detta! */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Rootvariabler: Definierar färger, typsnitt och bakgrund */
 :root {
   --primary-color: #131313;
   --secondary-color: #9a0707;
@@ -55,7 +57,7 @@ header {
   transform: scale(1.05);
 }
 
-/* Navigation Styling */
+/* Nav meny: Dold meny med slideDown-animation */
 nav {
   background: var(--primary-color);
   display: none;
@@ -73,6 +75,8 @@ nav {
     transform: translateY(0);
   }
 }
+
+/* Stil för länkar med hovereffekter */
 
 nav ul {
   list-style: none;
@@ -114,7 +118,7 @@ nav ul li a:hover::before {
   width: 100%;
 }
 
-/* Main Content Sections */
+/* Styling för main,  bakgrund, margin, skugga */
 main {
   max-width: 1200px;
   margin: 2rem auto;
@@ -188,7 +192,6 @@ main {
   font-style: italic;
 }
 
-/* Footer Styling */
 footer {
   background: var(--primary-color);
   color: var(--accent-color);
@@ -205,7 +208,9 @@ footer p {
   margin: 0;
 }
 
-/* Responsive Design */
+/* Responsiv design: Anpassningar för mindre skärmar */
+/* Mobile First ;) */
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;

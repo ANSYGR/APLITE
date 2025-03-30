@@ -1,3 +1,4 @@
+//Växlar visningen av navigationsmenyn samt uppdaterar hamburgerikonen genom att ändra klass baserat på menyns aktuella tillstånd.
 function toggleMenu() {
   const menu = document.getElementById('menu');
   const menuToggle = document.querySelector('.menu-toggle i');
@@ -15,6 +16,7 @@ function toggleMenu() {
   }
 }
 
+//skapar och visar en top-knapp när man scrollar ner över ett visst avstånd.
 window.addEventListener('scroll', function() {
   const scrollToTopBtn = document.createElement('div');
   scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
@@ -36,6 +38,7 @@ window.addEventListener('scroll', function() {
     transition: opacity 0.3s ease;
   `;
 
+  //När topp-knappen klickas, animeras en scroll tillbaka till sidans början.
   if (window.pageYOffset > 300) {
     scrollToTopBtn.style.opacity = '1';
     document.body.appendChild(scrollToTopBtn);

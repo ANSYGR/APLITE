@@ -1,3 +1,4 @@
+/* Global reset. Har sett flera webbutvecklare göra detta! */
 * {
   margin: 0;
   padding: 0;
