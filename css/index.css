@@ -23,10 +23,11 @@ body {
   transition: background-color 0.3s ease;
 }
 
+/* Header */
 header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   background: var(--primary-color);
   color: var(--accent-color);
   padding: 15px 20px;
@@ -36,17 +37,13 @@ header {
   z-index: 100;
 }
 
-/* Menyknapp: Storlek, animation, hover */
 .menu-toggle {
   font-size: 2.5rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   transition: transform 0.3s ease;
-}
-
-.menu-toggle:hover {
-  transform: scale(1.1) rotate(90deg);
+  align-self: flex-end;
 }
 
 .logo-container img {
@@ -58,7 +55,7 @@ header {
   transform: scale(1.05);
 }
 
-nav {
+#menu {
   background: var(--primary-color);
   display: none;
   width: 100%;
@@ -76,6 +73,8 @@ nav {
   }
 }
 
+
+
 nav ul {
   list-style: none;
   display: flex;
@@ -86,6 +85,7 @@ nav ul li {
   border-bottom: 1px solid #494949;
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
 nav ul li a {
@@ -116,7 +116,9 @@ nav ul li a:hover::before {
   width: 100%;
 }
 
-/* Hero-sektion: överlägg för landing page */
+
+
+/* Hero-sektion */
 .hero {
   position: relative;
   height: 90vh;
@@ -153,17 +155,17 @@ nav ul li a:hover::before {
 }
 
 .hero-overlay h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   margin-bottom: 15px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero-overlay p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   max-width: 600px;
 }
 
-/* Scenic-sektioner: sektioner med bakgrundsbilder och text */
+/* Scenic-sektioner */
 .scenic-section {
   position: relative;
   aspect-ratio: 16 / 9;
@@ -200,13 +202,13 @@ nav ul li a:hover::before {
 }
 
 .scenic-overlay h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 15px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .scenic-overlay p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   max-width: 500px;
   margin: 0 auto;
 }
@@ -225,36 +227,30 @@ footer {
 footer p {
   margin: 0;
 }
-
-/* Responsiv design: Anpassningar för mindre skärmar */
-/* Mobile First ;) */
-@media (max-width: 768px) {
+/* Responsiv design */
+/* Anpassning för desktop */
+@media (min-width: 768px) {
   header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
-  
   .menu-toggle {
-    align-self: flex-end;
+    align-self: initial;
   }
-  
   nav ul li {
-    text-align: center;
+    text-align: left;
   }
-  
   .hero-overlay h1 {
+    font-size: 3.5rem;
+  }
+  .hero-overlay p {
+    font-size: 1.5rem;
+  }
+  .scenic-overlay h2 {
     font-size: 2.5rem;
   }
-  
-  .hero-overlay p {
-    font-size: 1.2rem;
-  }
-  
-  .scenic-overlay h2 {
-    font-size: 2rem;
-  }
-  
   .scenic-overlay p {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }

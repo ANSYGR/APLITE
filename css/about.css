@@ -22,11 +22,11 @@ body {
   transition: background-color 0.3s ease;
 }
 
-/* Header Styling */
+/* Header */
 header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   background: var(--primary-color);
   color: var(--accent-color);
   padding: 15px 20px;
@@ -36,16 +36,14 @@ header {
   z-index: 100;
 }
 
+/* Menyknapp */
 .menu-toggle {
   font-size: 2.5rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   transition: transform 0.3s ease;
-}
-
-.menu-toggle:hover {
-  transform: scale(1.1) rotate(90deg);
+  align-self: flex-end;
 }
 
 .logo-container img {
@@ -57,8 +55,8 @@ header {
   transform: scale(1.05);
 }
 
-/* Nav meny: Dold meny med slideDown-animation */
-nav {
+/* Navigation */
+#menu {
   background: var(--primary-color);
   display: none;
   width: 100%;
@@ -76,8 +74,6 @@ nav {
   }
 }
 
-/* Stil för länkar med hovereffekter */
-
 nav ul {
   list-style: none;
   display: flex;
@@ -88,6 +84,7 @@ nav ul li {
   border-bottom: 1px solid #494949;
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
 nav ul li a {
@@ -118,19 +115,13 @@ nav ul li a:hover::before {
   width: 100%;
 }
 
-/* Styling för main,  bakgrund, margin, skugga */
-main {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 20px;
-}
-
+/* Sektioner */
 .about-section,
 .team-section,
 .history-section {
   background: var(--accent-color);
-  margin: 2rem 0;
-  padding: 2.5rem;
+  margin: 1rem;
+  padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -208,27 +199,24 @@ footer p {
   margin: 0;
 }
 
-/* Responsiv design: Anpassningar för mindre skärmar */
-/* Mobile First ;) */
-
-@media (max-width: 768px) {
+/* Responsiv design */
+/* Anpassning för desktop */
+@media (min-width: 768px) {
   header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
-  
   .menu-toggle {
-    align-self: flex-end;
+    align-self: initial;
   }
-  
   nav ul li {
-    text-align: center;
+    text-align: left;
   }
-  
   .about-section,
   .team-section,
   .history-section {
-    margin: 1rem;
-    padding: 1.5rem;
+    margin: 2rem 0;
+    padding: 2.5rem;
   }
 }

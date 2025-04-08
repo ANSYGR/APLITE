@@ -21,10 +21,11 @@ body {
   transition: background-color 0.3s ease;
 }
 
+/* Header */
 header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   background: var(--primary-color);
   color: var(--accent-color);
   padding: 15px 20px;
@@ -40,10 +41,7 @@ header {
   display: flex;
   align-items: center;
   transition: transform 0.3s ease;
-}
-
-.menu-toggle:hover {
-  transform: scale(1.1) rotate(90deg);
+  align-self: flex-end;
 }
 
 .logo-container img {
@@ -55,7 +53,7 @@ header {
   transform: scale(1.05);
 }
 
-nav {
+#menu {
   background: var(--primary-color);
   display: none;
   width: 100%;
@@ -83,6 +81,7 @@ nav ul li {
   border-bottom: 1px solid #494949;
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
 nav ul li a {
@@ -119,9 +118,10 @@ main {
   padding: 0 20px;
 }
 
+/* Projektsektioner */
 .project-section {
   position: relative;
-  height: 60vh;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,7 +155,7 @@ main {
 }
 
 .project-overlay h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
   transform: translateY(20px);
@@ -206,26 +206,24 @@ footer p {
   margin: 0;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Responsiv design */
+/* Anpassning för desktop */
+@media (min-width: 768px) {
   header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
-  
   .menu-toggle {
-    align-self: flex-end;
+    align-self: initial;
   }
-  
   nav ul li {
-    text-align: center;
+    text-align: left;
   }
-  
   .project-section {
-    height: 50vh;
+    height: 60vh;
   }
-  
   .project-overlay h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 }
